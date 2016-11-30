@@ -10,7 +10,16 @@ if (userLogin.password === password) {
   loggedIn = true;
 }
 else {
-  alert("Incorrect password!");
-  break;
+  for (var i = 2; i > 0; i--) {
+  alert("Incorrect password! Try again. Remaining attempts : " + i + ".");
+  password = prompt("Enter password for user " + userLogin.username + ".");
+  if (userLogin.password === password) {
+    alert("Welcome back, Mr. President.")
+    loggedIn = true;
+    break;
+        }
+      }
+      alert("Exceeded maximum number of login attempts!");
+      break;
+    }
   }
-}
